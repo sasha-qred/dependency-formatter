@@ -1,0 +1,51 @@
+{
+  "name": "dependency-formatter",
+  "displayName": "Dependency formatter",
+  "description": "Simple dependency version formatting",
+  "version": "0.1.1",
+  "publisher": "sasha-qred",
+  "bugs": {
+    "url": "https://github.com/sasha-qred/dependency-formatter/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Sasha Verbilo",
+    "email": "saverbsha@gmail.com",
+    "url": "https://github.com/sasha-qred/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sasha-qred/dependency-formatter/"
+  },
+  "engines": {
+    "vscode": "^1.14.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:dependency-formatter.formatDependencies"
+  ],
+  "main": "./src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dependency-formatter.formatDependencies",
+        "title": "Format Dependencies",
+        "category": "Dependency Formatter"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "~2.4",
+    "vscode": "~1.1",
+    "mocha": "~3.4",
+    "eslint": "~4.3",
+    "@types/node": "~8.0",
+    "@types/mocha": "~2.2"
+  }
+}
