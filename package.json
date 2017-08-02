@@ -41,11 +41,11 @@
     "test": "node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "typescript": "~2.4",
-    "vscode": "~1.1",
-    "mocha": "~3.4",
-    "eslint": "~4.3",
+    "@types/mocha": "~2.2",
     "@types/node": "~8.0",
-    "@types/mocha": "~2.2"
+    "eslint": "~4.3",
+    "mocha": "~3.4",
+    "typescript": "~2.4",
+    "vscode": "~1.1"
   }
 }
