@@ -39,7 +39,8 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
+    "test": "node ./node_modules/vscode/bin/test",
+    "vscode:prepublish": "git clean -d && git reset --hard && git checkout master && git pull && npm i"
   },
   "dependencies": {
     "vscode": "~1.1"
