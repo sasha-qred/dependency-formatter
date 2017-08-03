@@ -37,15 +37,20 @@
     ]
   },
   "scripts": {
+    "lint": "./node_modules/.bin/eslint ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test"
+  },
+  "dependencies": {
+    "vscode": "~1.1"
   },
   "devDependencies": {
     "@types/mocha": "~2.2",
     "@types/node": "~8.0",
     "eslint": "~4.3",
+    "eslint-config-airbnb-base": "~11.3",
+    "eslint-plugin-import": "~2.7",
     "mocha": "~3.4",
-    "typescript": "~2.4",
-    "vscode": "~1.1"
+    "typescript": "~2.4"
   }
 }
