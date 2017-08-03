@@ -1,4 +1,4 @@
-# dependency-formatter README
+# Dependency formatter
 
 Simple dependency version formatting
 

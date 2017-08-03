@@ -2,7 +2,7 @@
   "name": "dependency-formatter",
   "displayName": "Dependency formatter",
   "description": "Simple dependency version formatting",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "publisher": "sasha-qred",
   "bugs": {
     "url": "https://github.com/sasha-qred/dependency-formatter/issues"
@@ -28,6 +28,17 @@
   ],
   "main": "./src/extension",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Format Dependencies configuration",
+      "properties": {
+        "dependency-formatter.autosave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Specifies autosave after changes"
+        }
+      }
+    },
     "commands": [
       {
         "command": "dependency-formatter.formatDependencies",
@@ -37,15 +48,21 @@
     ]
   },
   "scripts": {
+    "lint": "./node_modules/.bin/eslint ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
+    "test": "node ./node_modules/vscode/bin/test",
+    "vscode:prepublish": "git clean -d && git reset --hard && git checkout master && git pull && npm i"
+  },
+  "dependencies": {
+    "vscode": "~1.1"
   },
   "devDependencies": {
-    "typescript": "~2.4",
-    "vscode": "~1.1",
-    "mocha": "~3.4",
-    "eslint": "~4.3",
+    "@types/mocha": "~2.2",
     "@types/node": "~8.0",
-    "@types/mocha": "~2.2"
+    "eslint": "~4.3",
+    "eslint-config-airbnb-base": "~11.3",
+    "eslint-plugin-import": "~2.7",
+    "mocha": "~3.4",
+    "typescript": "~2.4"
   }
 }
