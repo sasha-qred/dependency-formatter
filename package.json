@@ -28,6 +28,17 @@
   ],
   "main": "./src/extension",
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Format Dependencies configuration",
+      "properties": {
+        "dependency-formatter.autosave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Specifies autosave after changes"
+        }
+      }
+    },
     "commands": [
       {
         "command": "dependency-formatter.formatDependencies",
