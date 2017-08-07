@@ -1,7 +1,11 @@
 const vscode = require('vscode'); // eslint-disable-line import/no-unresolved
 const df = require('./default-format');
 
-const config = vscode.workspace.getConfiguration('dependency-formatter');
+const setting = (config =>
+  ({
+    autosave: config.get('autosave'),
+  })
+)(vscode.workspace.getConfiguration('dependency-formatter'));
 
 function activate(context) {
   const disposable = vscode.commands.registerCommand('dependency-formatter.formatDependencies', () => {
@@ -18,7 +22,7 @@ function activate(context) {
           editBuilder.replace(fullDocRange, updatedDocText);
         }
       }).then(() => {
-        if (config.get('autosave')) {
+        if (setting.autosave) {
           activeEditor.document.save();
         }
       });
