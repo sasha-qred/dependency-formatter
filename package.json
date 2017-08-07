@@ -46,6 +46,15 @@
             "patch"
           ],
           "description": "Specifies last saved part of version. If 'minor', formatted version will be '~x.y'. But if 'minor' part isn't provided, version will be '~x'."
+        },
+        "dependency-formatter.preferredRange": {
+          "type": "enum",
+          "default": "tilde",
+          "enum": [
+            "tilde",
+            "caret"
+          ],
+          "description": "Specifies range symbol."
         }
       }
     },

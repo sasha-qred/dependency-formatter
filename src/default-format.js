@@ -46,7 +46,19 @@
           break;
         }
       }
-      return `~${formattedVer.join('.')}`;
+      let rangeSymbol;
+      switch (settings.preferredRange) {
+        case 'caret': {
+          rangeSymbol = '^';
+          break;
+        }
+        case 'tilde':
+        default: {
+          rangeSymbol = '~';
+          break;
+        }
+      }
+      return `${rangeSymbol}${formattedVer.join('.')}`;
     };
   }
 

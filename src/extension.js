@@ -5,6 +5,7 @@ const setting = (config =>
   ({
     autosave: config.get('autosave'),
     lastPart: config.get('lastPart'),
+    preferredRange: config.get('preferredRange'),
   })
 )(vscode.workspace.getConfiguration('dependency-formatter'));
 
