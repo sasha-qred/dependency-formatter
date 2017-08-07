@@ -36,6 +36,16 @@
           "type": "boolean",
           "default": true,
           "description": "Specifies autosave after changes"
+        },
+        "dependency-formatter.lastPart": {
+          "type": "enum",
+          "default": "minor",
+          "enum": [
+            "major",
+            "minor",
+            "patch"
+          ],
+          "description": "Specifies last saved part of version. If 'minor', formatted version will be '~x.y'. But if 'minor' part isn't provided, version will be '~x'."
         }
       }
     },

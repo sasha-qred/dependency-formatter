@@ -4,6 +4,7 @@ const df = require('./default-format');
 const setting = (config =>
   ({
     autosave: config.get('autosave'),
+    lastPart: config.get('lastPart'),
   })
 )(vscode.workspace.getConfiguration('dependency-formatter'));
 
@@ -17,7 +18,7 @@ function activate(context) {
         const docStart = new vscode.Position(0, 0);
         const docEnd = new vscode.Position(totalLines + 1, 0);
         const fullDocRange = new vscode.Range(docStart, docEnd);
-        const updatedDocText = df.defaultFormat(docText);
+        const updatedDocText = df.defaultFormat(docText, setting);
         if (updatedDocText !== docText) {
           editBuilder.replace(fullDocRange, updatedDocText);
         }
