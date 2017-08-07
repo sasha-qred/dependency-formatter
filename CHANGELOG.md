@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.3.1] - 2017.08.07
+## Fixed
+- package-lock.json
+
 ## [0.3.0] - 2017.08.07
 ## Added
 - Property `dependency-formatter.lastPart`. Property is used to set last valuable part of version. `major`, `minor` or `patch`. `minor` by default.
