@@ -2,7 +2,7 @@
   "name": "dependency-formatter",
   "displayName": "Dependency formatter",
   "description": "Simple dependency version formatting",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "sasha-qred",
   "bugs": {
     "url": "https://github.com/sasha-qred/dependency-formatter/issues"
@@ -36,6 +36,25 @@
           "type": "boolean",
           "default": true,
           "description": "Specifies autosave after changes"
+        },
+        "dependency-formatter.lastPart": {
+          "type": "enum",
+          "default": "minor",
+          "enum": [
+            "major",
+            "minor",
+            "patch"
+          ],
+          "description": "Specifies last saved part of version. If 'minor', formatted version will be '~x.y'. But if 'minor' part isn't provided, version will be '~x'."
+        },
+        "dependency-formatter.preferredRange": {
+          "type": "enum",
+          "default": "tilde",
+          "enum": [
+            "tilde",
+            "caret"
+          ],
+          "description": "Specifies range symbol."
         }
       }
     },

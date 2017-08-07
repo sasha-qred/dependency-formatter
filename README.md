@@ -2,5 +2,8 @@
 
 Simple dependency version formatting
 
-Features:
-- `Format Dependencies` - formatting any dependency version to `~x.y` format.
+`Format Dependencies` - formatting any dependency version to custom format.  
+Extension options:
+- `dependency-formatter.autosave` - Enable or disable automatic saving.
+- `dependency-formatter.lastPart` - Last valuable part of version. `major`, `minor` or `patch`.
+- `dependency-formatter.preferredRange` - Set extension range. `tilde` or `caret`.

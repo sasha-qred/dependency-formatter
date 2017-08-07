@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.3.0] - 2017.08.07
+## Added
+- Property `dependency-formatter.lastPart`. Property is used to set last valuable part of version. `major`, `minor` or `patch`. `minor` by default.
+- Property `dependency-formatter.preferredRange`. Property is used to set version range symbol. `tilde` or `caret`. `tilde` by default.
+
 ## [0.2.0] - 2017.08.03
 ### Added
 - Property `dependency-formatter.autosave`. `True` by default. If `true`, file will be saved after changes. 
