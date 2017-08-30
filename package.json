@@ -78,10 +78,10 @@
   "devDependencies": {
     "@types/mocha": "~2.2",
     "@types/node": "~8.0",
-    "eslint": "~4.3",
+    "eslint": "~4.5",
     "eslint-config-airbnb-base": "~11.3",
     "eslint-plugin-import": "~2.7",
-    "mocha": "~3.4",
+    "mocha": "~3.5",
     "typescript": "~2.4"
   }
 }
