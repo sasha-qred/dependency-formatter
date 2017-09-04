@@ -28,37 +28,44 @@ function formatVersions(settings) {
 
 function replaceVersion(settings) {
   return (fullVersion, verRange, majorVer, minorVer, patchVer) => {
-    const formattedVer = [];
-    switch (settings.lastPart) {
-      case 'patch': {
-        unshiftIfExist(formattedVer, patchVer);
-      } // falls through
-      case 'minor': {
-        unshiftIfExist(formattedVer, minorVer);
-      } // falls through
-      case 'major': {
-        unshiftIfExist(formattedVer, majorVer);
-        break;
-      }
-      default: {
-        unshiftIfExist(formattedVer, minorVer, majorVer);
-        break;
-      }
-    }
-    let rangeSymbol;
-    switch (settings.preferredRange) {
-      case 'caret': {
-        rangeSymbol = '^';
-        break;
-      }
-      case 'tilde':
-      default: {
-        rangeSymbol = '~';
-        break;
-      }
-    }
-    return `${rangeSymbol}${formattedVer.join('.')}`;
+    let version = '';
+    version = formatNumber(settings, majorVer, minorVer, patchVer);
+    version = formatRange(settings, version);
+    return version;
   };
+}
+
+function formatNumber(settings, majorVer, minorVer, patchVer) {
+  const formattedVer = [];
+  switch (settings.lastPart) {
+    case 'patch': {
+      unshiftIfExist(formattedVer, patchVer);
+    } // falls through
+    case 'minor': {
+      unshiftIfExist(formattedVer, minorVer);
+    } // falls through
+    case 'major': {
+      unshiftIfExist(formattedVer, majorVer);
+      break;
+    }
+    default: {
+      unshiftIfExist(formattedVer, minorVer, majorVer);
+      break;
+    }
+  }
+  return formattedVer.join('.');
+}
+
+function formatRange(settings, versionNumber) {
+  switch (settings.preferredRange) {
+    case 'caret': {
+      return `^${versionNumber}`;
+    }
+    case 'tilde':
+    default: {
+      return `~${versionNumber}`;
+    }
+  }
 }
 
 function unshiftIfExist(array, ...items) {
