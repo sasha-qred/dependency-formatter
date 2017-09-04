@@ -3,7 +3,7 @@ exports.defaultFormat = defaultFormat;
 const regExpPatterns = {
   dependencies: /".*?dependencies"[\s]*?:[\s]*?\{([\s\S]*?)\}/gim,
   dependency: /"(.*?)"([\s]*?:[\s]*?)"(.*?)"/gim,
-  version: /^(\D)?(\d*?)(?:\.(\d*?)(?:\.(\d*?))?(?:-[0-9A-Za-z.+-]*?)?)?$/,
+  version: /^(\D)?(\d|x|X|\**?)(?:\.(\d|x|X|\**?)(?:\.(\d|x|X|\**?))?(?:-[0-9A-Za-z.+-]*?)?)?$/,
 };
 
 function defaultFormat(textToFormat, settings) {
@@ -60,6 +60,12 @@ function formatRange(settings, versionNumber) {
   switch (settings.preferredRange) {
     case 'caret': {
       return `^${versionNumber}`;
+    }
+    case 'x-range': {
+      if (versionNumber.split('.').length < 3) {
+        return `${versionNumber}.${settings.xRangeSymbol}`;
+      }
+      return versionNumber;
     }
     case 'tilde':
     default: {

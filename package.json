@@ -52,9 +52,20 @@
           "default": "tilde",
           "enum": [
             "tilde",
+            "x-range",
             "caret"
           ],
-          "description": "Specifies range symbol."
+          "description": "Specifies range."
+        },
+        "dependency-formatter.xRangeSymbol": {
+          "type": "enum",
+          "default": "*",
+          "enum": [
+            "X",
+            "x",
+            "*"
+          ],
+          "description": "Specifies x-range symbol."
         }
       }
     },

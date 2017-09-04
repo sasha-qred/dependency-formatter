@@ -1,5 +1,10 @@
 # Change Log
 
+## Unreleased
+- Refactor code
+### Added
+- `X`-range support
+
 ## [0.3.1] - 2017.08.07
 ## Fixed
 - package-lock.json
