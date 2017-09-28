@@ -1,9 +1,12 @@
 # Change Log
 
-## Unreleased
+## [0.4.0] - 2017.09.28
+### Fixed
 - Refactor code
+- Mistakes in formatting numbers
 ### Added
 - `X`-range support
+- `X`-range symbol
 
 ## [0.3.1] - 2017.08.07
 ## Fixed
