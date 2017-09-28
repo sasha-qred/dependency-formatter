@@ -3,7 +3,7 @@ exports.defaultFormat = defaultFormat;
 const regExpPatterns = {
   dependencies: /".*?dependencies"[\s]*?:[\s]*?\{([\s\S]*?)\}/gim,
   dependency: /"(.*?)"([\s]*?:[\s]*?)"(.*?)"/gim,
-  version: /^(\D)?(\d|x|X|\**?)(?:\.(\d|x|X|\**?)(?:\.(\d|x|X|\**?))?(?:-[0-9A-Za-z.+-]*?)?)?$/,
+  version: /^([~^])?(\d*?)(?:\.(\d*?)(?:\.(\d*?))?(?:-[0-9A-Za-z.+-]*?)?)?$/,
 };
 
 function defaultFormat(textToFormat, settings) {
@@ -57,6 +57,9 @@ function formatNumber(settings, majorVer, minorVer, patchVer) {
 }
 
 function formatRange(settings, versionNumber) {
+  if (!(versionNumber || versionNumber === 0)) {
+    return `${settings.xRangeSymbol}`;
+  }
   switch (settings.preferredRange) {
     case 'caret': {
       return `^${versionNumber}`;
@@ -76,8 +79,10 @@ function formatRange(settings, versionNumber) {
 
 function unshiftIfExist(array, ...items) {
   items.forEach((item) => {
-    if (item !== undefined) {
+    if (item || item === 0) {
       array.unshift(item);
+    } else {
+      array.splice(0, array.length);
     }
   });
 }
