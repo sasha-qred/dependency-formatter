@@ -1,11 +1,19 @@
 # Change Log
 
+## [0.4.0] - 2017.09.28
+### Fixed
+- Refactor code
+- Mistakes in formatting numbers
+### Added
+- `X`-range support
+- `X`-range symbol
+
 ## [0.3.1] - 2017.08.07
 ## Fixed
 - package-lock.json
 
 ## [0.3.0] - 2017.08.07
-## Added
+### Added
 - Property `dependency-formatter.lastPart`. Property is used to set last valuable part of version. `major`, `minor` or `patch`. `minor` by default.
 - Property `dependency-formatter.preferredRange`. Property is used to set version range symbol. `tilde` or `caret`. `tilde` by default.
 

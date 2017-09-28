@@ -1,38 +1,9 @@
 const vscode = require('vscode'); // eslint-disable-line import/no-unresolved
-const df = require('./default-format');
-
-const setting = (config =>
-  ({
-    autosave: config.get('autosave'),
-    lastPart: config.get('lastPart'),
-    preferredRange: config.get('preferredRange'),
-  })
-)(vscode.workspace.getConfiguration('dependency-formatter'));
+const formatter = require('./formatter');
 
 function activate(context) {
-  const disposable = vscode.commands.registerCommand('dependency-formatter.formatDependencies', () => {
-    try {
-      const activeEditor = vscode.window.activeTextEditor;
-      activeEditor.edit((editBuilder) => {
-        const docText = activeEditor.document.getText();
-        const totalLines = activeEditor.document.lineCount;
-        const docStart = new vscode.Position(0, 0);
-        const docEnd = new vscode.Position(totalLines + 1, 0);
-        const fullDocRange = new vscode.Range(docStart, docEnd);
-        const updatedDocText = df.defaultFormat(docText, setting);
-        if (updatedDocText !== docText) {
-          editBuilder.replace(fullDocRange, updatedDocText);
-        }
-      }).then(() => {
-        if (setting.autosave) {
-          activeEditor.document.save();
-        }
-      });
-    } catch (e) {
-      vscode.window.showErrorMessage('Error');
-    }
-  });
-
+  const disposable = vscode.commands
+    .registerCommand('dependency-formatter.formatDependencies', formatter);
   context.subscriptions.push(disposable);
 }
 exports.activate = activate;
