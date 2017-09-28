@@ -1,3 +1,5 @@
+const helpers = require('../helpers');
+
 exports.defaultFormat = defaultFormat;
 
 const regExpPatterns = {
@@ -57,7 +59,7 @@ function formatNumber(settings, majorVer, minorVer, patchVer) {
 }
 
 function formatRange(settings, versionNumber) {
-  if (!(versionNumber || versionNumber === 0)) {
+  if (!helpers.isExist(versionNumber)) {
     return `${settings.xRangeSymbol}`;
   }
   switch (settings.preferredRange) {
@@ -79,7 +81,7 @@ function formatRange(settings, versionNumber) {
 
 function unshiftIfExist(array, ...items) {
   items.forEach((item) => {
-    if (item || item === 0) {
+    if (helpers.isExist(item)) {
       array.unshift(item);
     } else {
       array.splice(0, array.length);
