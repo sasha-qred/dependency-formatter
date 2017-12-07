@@ -6,5 +6,6 @@ module.exports = (config =>
     lastPart: config.get('lastPart'),
     preferredRange: config.get('preferredRange'),
     xRangeSymbol: config.get('xRangeSymbol'),
+    excludePatterns: config.get('excludePatterns'),
   })
 )(vscode.workspace.getConfiguration('dependency-formatter'));

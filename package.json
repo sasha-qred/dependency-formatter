@@ -66,6 +66,14 @@
             "*"
           ],
           "description": "Specifies x-range symbol."
+        },
+        "dependency-formatter.excludePatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "Specifies array of patterns for dependency name for exclusion from formatting."
         }
       }
     },
