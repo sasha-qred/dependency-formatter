@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.5.0] - 2017.12.25
+### Added
+- `excludePatterns` option in plugin settings. Array of RegEx for excluding modules from formatting witch matching with at least one of pattern in array.
+### Updated
+- Dependencies of plugin
+
 ## [0.4.0] - 2017.09.28
 ### Fixed
 - Refactor code

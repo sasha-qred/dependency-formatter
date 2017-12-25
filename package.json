@@ -2,7 +2,7 @@
   "name": "dependency-formatter",
   "displayName": "Dependency formatter",
   "description": "Simple dependency version formatting",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "publisher": "sasha-qred",
   "bugs": {
     "url": "https://github.com/sasha-qred/dependency-formatter/issues"
@@ -66,6 +66,14 @@
             "*"
           ],
           "description": "Specifies x-range symbol."
+        },
+        "dependency-formatter.excludePatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "description": "Specifies array of patterns for dependency name for exclusion from formatting."
         }
       }
     },
@@ -87,12 +95,9 @@
     "vscode": "~1.1"
   },
   "devDependencies": {
-    "@types/mocha": "~2.2",
-    "@types/node": "~8.0",
-    "eslint": "~4.7",
-    "eslint-config-airbnb-base": "~12.0",
-    "eslint-plugin-import": "~2.7",
-    "mocha": "~3.5",
-    "typescript": "~2.5"
+    "eslint": "~4.12",
+    "eslint-config-airbnb-base": "~12.1",
+    "eslint-plugin-import": "~2.8",
+    "mocha": "~4.0"
   }
 }

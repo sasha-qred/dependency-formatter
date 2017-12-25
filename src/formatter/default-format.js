@@ -23,7 +23,10 @@ function formatBlocks(settings) {
 function formatVersions(settings) {
   return (matchedString, dependencyName, dependencySeparator, dependencyVer) => {
     const versionRegExp = regExpPatterns.version;
-    const formattedDependencyVer = dependencyVer.replace(versionRegExp, replaceVersion(settings));
+    let formattedDependencyVer = dependencyVer;
+    if (!settings.excludePatterns.some(isRegExpTestedToString(dependencyName))) {
+      formattedDependencyVer = dependencyVer.replace(versionRegExp, replaceVersion(settings));
+    }
     return `"${dependencyName}"${dependencySeparator}"${formattedDependencyVer}"`;
   };
 }
@@ -87,4 +90,8 @@ function unshiftIfExist(array, ...items) {
       array.splice(0, array.length);
     }
   });
+}
+
+function isRegExpTestedToString(str) {
+  return expression => (new RegExp(expression)).test(str);
 }

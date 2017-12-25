@@ -1,0 +1,48 @@
+{
+  "dependencies": {
+    "simpleMajorVersion": "4",
+    "simpleMajorMinorVersion": "4.2",
+    "simpleMajorMinorPatchVersion": "4.2.1",
+
+    "tildeMajorVersion": "~4",
+    "tildeMajorMinorVersion": "~4.2",
+    "tildeMajorMinorPatchVersion": "~4.2.1",
+
+    "caretMajorVersion": "^4",
+    "caretMajorMinorVersion": "^4.2",
+    "caretMajorMinorPatchVersion": "^4.2.1",
+
+    "xRangeMajorVersion": "4.x",
+    "xRangeMajorMinorVersion": "4.2.x",
+    "xRangeMajorMinorPatchVersion": "4.2.1",
+
+    "borkenSimpleMajorVersion": "4.",
+    "borkenSimpleMajorMinorVersion": "4.2.",
+    "borkenSimpleMajorMinorPatchVersion": "4.2.1.",
+
+    "borkenTildeMajorVersion": "~4.",
+    "borkenTildeMajorMinorVersion": "~4.2.",
+    "borkenTildeMajorMinorPatchVersion": "~4.2.1.",
+
+    "borkenCaretMajorVersion": "^4.",
+    "borkenCaretMajorMinorVersion": "^4.2.",
+    "borkenCaretMajorMinorPatchVersion": "^4.2.1.",
+
+    "borkenXRangeMajorVersion": "4.x.",
+    "borkenXRangeMajorMinorVersion": "4.2.x.",
+    "borkenXRangeMajorMinorPatchVersion": "4.2.1.",
+
+    "altBorkenSimpleMajorMinorVersion": ".2",
+    "altBorkenSimpleMajorMinorPatchVersion": ".2.1",
+
+    "altBorkenTildeMajorMinorVersion": "~.2",
+    "altBorkenTildeMajorMinorPatchVersion": "~.2.1",
+
+    "altBorkenCaretMajorMinorVersion": "^.2",
+    "altBorkenCaretMajorMinorPatchVersion": "^.2.1",
+
+    "altBorkenXRangeMajorVersion": ".x",
+    "altBorkenXRangeMajorMinorVersion": ".2.x",
+    "altBorkenXRangeMajorMinorPatchVersion": ".2.1"
+  }
+}
