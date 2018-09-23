@@ -1,5 +1,7 @@
 const assert = require('assert');
+// eslint-disable-next-line no-unused-vars
 const vscode = require('vscode'); // eslint-disable-line import/no-unresolved
+// eslint-disable-next-line no-unused-vars
 const extension = require('../src/extension');
 
 suite('Extension Tests', () => {
